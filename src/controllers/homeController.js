@@ -8,7 +8,7 @@ let getHomePage = async (req, res) => {
       data: JSON.stringify(data), //convert ob sang string
     });
   } catch (e) {
-    console.log(e);
+    console.log("Error Please check again",e);
   }
 };
 let aboutPage = (req, res) => {
