@@ -9,7 +9,7 @@ let CreateNewUser = async(data) =>
   {
     try {
       //create new hasspass if password -> haspass
-      let hashPasswordFromBcrypt= await hashUserPssword(data.password)   
+      let hashPasswordFromBcrypt= await hashUserPassword(data.password)   
       await db.User.create({
       email: data.email,
       password: hashPasswordFromBcrypt,
@@ -21,8 +21,8 @@ let CreateNewUser = async(data) =>
       roleId: data.roleId,
       }) 
       resolve('Log data successfull')
-    } catch (error) {
-      reject(error);
+    } catch (e) {
+      reject("Error Please check again",e);
     }
   })    
   /*
@@ -32,7 +32,7 @@ let CreateNewUser = async(data) =>
      console.log(hashPasswordFromBcrypt);*/
 }
 //hashpass user 
-let hashUserPssword = (password) =>
+let hashUserPassword = (password) =>
 {
     return new Promise(async(resolve, reject) =>
     {
