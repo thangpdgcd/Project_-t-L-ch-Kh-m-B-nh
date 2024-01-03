@@ -22,6 +22,7 @@
     "@babel/core": "^7.23.3",
     "@babel/node": "^7.22.19",
     "@babel/preset-env": "^7.23.3",
+    "bcryptjs": "^2.4.3",
     "sequelize-cli": "^6.6.2"
   }
 }

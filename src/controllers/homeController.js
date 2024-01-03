@@ -14,10 +14,24 @@ let getHomePage = async (req, res) => {
 let aboutPage = (req, res) => {
   return res.render("test/about.ejs");
 };
+let getCRUD =(req,res)=>
+{
+  return res.render("crud.ejs")
+}
+
+let postCRUD = async(req, res) =>
+{
+  let message= await CRUDService.CreateNewUser(req.body);
+  console.log(req.body) //get client to controller
+  console.log(message);
+  return res.send("check data send ....")
+}
 //ob
 //{key,
 //value}
 module.exports = {
   getHomePage: getHomePage,
   aboutPage: aboutPage,
+  getCRUD: getCRUD,
+  postCRUD:postCRUD,
 };
