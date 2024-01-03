@@ -11,12 +11,12 @@ let CreateNewUser = async(data) =>
       //create new hasspass if password -> haspass
       let hashPasswordFromBcrypt= await hashUserPssword(data.password)   
       await db.User.create({
-        email: data.email,
+      email: data.email,
       password: hashPasswordFromBcrypt,
       firstName: data.firstName,
       lastName: data.lastName,
       address: data.address,
-      gender: data.gender =='1' ?true : false, //Math 3rth 
+      gender: data.gender =='1' ?true : false, //Math 3rth place
       image:data.image,
       roleId: data.roleId,
       }) 
@@ -25,9 +25,11 @@ let CreateNewUser = async(data) =>
       reject(error);
     }
   })    
-    // console.log("data from service");
-    // console.log(data);
-    // console.log(hashPasswordFromBcrypt);
+  /*
+  1. create new function if hasspassword and check data from controller
+    console.log("data from service");
+     console.log(data);
+     console.log(hashPasswordFromBcrypt);*/
 }
 //hashpass user 
 let hashUserPssword = (password) =>
