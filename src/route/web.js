@@ -6,8 +6,8 @@ let initWebRoutes = (app) => {
   router.get("/", homeController.getHomePage);
   router.get("/about", homeController.aboutPage);
   router.get("/crud", homeController.getCRUD);
-   router.post("/post-crud",homeController.postCRUD);
-   //call file homecontroller
+  router.post("/post-crud", homeController.postCRUD);
+  //call file homecontroller
   return app.use("/", router);
 };
 module.exports = initWebRoutes;
